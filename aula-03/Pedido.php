@@ -1,8 +1,9 @@
 <?php
 
 require_once __DIR__ . '/Cliente.php';
+require_once __DIR__ . '/PedidoItem.php';
 
-class Pedido
+class Pedido implements \JsonSerializable
 {
     protected array $itens = [];
 
@@ -19,14 +20,25 @@ class Pedido
         return $this->itens;
     }
 
-    public function adicionarItem(string $produto, float $valor)
+    public function adicionarItem(PedidoItem $pedidoItem)
     {
-        $this->itens[] = $produto;
-        $this->somarValorAoTotal($valor);
+        $this->itens[] = $pedidoItem;
+        $this->somarValorAoTotal(
+            $pedidoItem->produto->valor * $pedidoItem->quantidade
+        );
     }
 
     private function somarValorAoTotal(float $valor)
     {
         $this->valor = $this->valor + $valor;
+    }
+
+    public function jsonSerialize()
+    {
+        return [
+            'cliente' => $this->cliente,
+            'itens' => $this->itens,
+            'valor' => $this->valor
+        ];
     }
 }

@@ -7,7 +7,9 @@ $cliente = new Cliente('William');
 
 $pedido = new Pedido($cliente);
 
-$pedido->adicionarItem('Salgado', 3.45);
-$pedido->adicionarItem('Sabonete', 4.35);
+$pedido->adicionarItem(
+    new PedidoItem(new Produto('Salgado', 3.45), 2)
+);
+// $pedido->adicionarItem('Sabonete', 4.35);
 
-var_dump($pedido);
+echo json_encode($pedido, JSON_PRETTY_PRINT);
