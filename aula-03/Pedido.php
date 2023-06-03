@@ -1,8 +1,5 @@
 <?php
 
-require_once __DIR__ . '/Cliente.php';
-require_once __DIR__ . '/PedidoItem.php';
-
 class Pedido implements \JsonSerializable
 {
     protected array $itens = [];

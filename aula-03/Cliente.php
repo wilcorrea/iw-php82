@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/Pessoa.php';
-
 class Cliente extends Pessoa
 {
     public function __construct(

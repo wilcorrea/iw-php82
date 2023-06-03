@@ -1,7 +1,5 @@
 <?php
 
-require_once __DIR__ . '/Produto.php';
-
 class PedidoItem
 {
     public function __construct(

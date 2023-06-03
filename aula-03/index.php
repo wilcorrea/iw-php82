@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Pedido.php';
-require_once __DIR__ . '/Cliente.php';
+spl_autoload_register(function ($class) {
+    require_once __DIR__ . '/' . $class . '.php';
+});
 
 $cliente = new Cliente('William');
 
