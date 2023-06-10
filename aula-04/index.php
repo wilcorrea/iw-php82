@@ -2,6 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+// Full Qualified Name
 use App\Cadastro\Cliente;
 use App\Cadastro\Produto;
 use App\Venda\Pedido;

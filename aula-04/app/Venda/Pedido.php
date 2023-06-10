@@ -37,6 +37,7 @@ class Pedido implements \JsonSerializable
     public function jsonSerialize(): array
     {
         return [
+            'app' => APPLICATION_NAME,
             'cliente' => $this->cliente,
             'itens' => $this->itens,
             'valor' => $this->valor
