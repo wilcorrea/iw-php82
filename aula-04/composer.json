@@ -1,0 +1,9 @@
+{
+    "name": "php82/aula-04",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
