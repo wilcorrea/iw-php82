@@ -9,6 +9,7 @@ use App\Venda\Pedido;
 use App\Venda\PedidoItem;
 
 $cliente = new Cliente('William');
+$cliente->alterarAtivo(false);
 
 $pedido = new Pedido($cliente);
 

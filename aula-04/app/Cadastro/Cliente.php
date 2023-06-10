@@ -2,7 +2,7 @@
 
 namespace App\Cadastro;
 
-class Cliente extends Pessoa
+class Cliente extends Pessoa implements \JsonSerializable
 {
     public function __construct(
         public readonly string $nome,
@@ -11,5 +11,18 @@ class Cliente extends Pessoa
         public readonly bool $novo = true
     )
     {
+    }
+
+    public function alterarAtivo(bool $ativo): void
+    {
+        if ($this->novo === true) {
+            return;
+        }
+        parent::alterarAtivo($ativo);
+    }
+
+    public function jsonSerialize(): array
+    {
+        return get_object_vars($this);
     }
 }
