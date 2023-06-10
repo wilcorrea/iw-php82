@@ -34,6 +34,11 @@ class Pedido implements \JsonSerializable
         $this->valor = $this->valor + $valor;
     }
 
+    public function getValorTotal()
+    {
+        return $this->valor;
+    }
+
     public function jsonSerialize(): array
     {
         return [
