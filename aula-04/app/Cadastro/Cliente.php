@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Vendas;
+namespace App\Cadastro;
 
 class Cliente extends Pessoa
 {

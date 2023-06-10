@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Vendas;
+namespace App\Venda;
+
+use App\Cadastro\Cliente;
 
 class Pedido implements \JsonSerializable
 {

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Vendas;
+namespace App\Venda;
+
+use App\Cadastro\Produto;
 
 class PedidoItem
 {
