@@ -13,7 +13,7 @@ $renderer = new PhpRenderer(__DIR__ . '/../resources/views');
 
 $app->get('/pedido/new', function (Request $request, Response $response, array $args) use ($renderer) {
     // $params = $request->getQueryParams();
-    return $renderer->render($response, "pedido/create.php", $args);
+    return $renderer->render($response, 'pedido/new.php', $args);
 });
 
 $app->run();
