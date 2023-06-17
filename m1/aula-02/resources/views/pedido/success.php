@@ -1,27 +1,3 @@
-<?php
-
-require __DIR__ . '/../vendor/autoload.php';
-
-// Full Qualified Name
-use App\Cadastro\Cliente;
-use App\Cadastro\Produto;
-use App\Venda\Pedido;
-use App\Venda\PedidoItem;
-
-$cliente = new Cliente($_POST['cliente']);
-
-$pedido = new Pedido($cliente);
-
-$produtos = $_POST['produto'];
-$quantidades = $_POST['quantidade'];
-
-$pedido->adicionarItem(
-    new PedidoItem(new Produto($produtos[0], 3.45), $quantidades[0])
-);
-$pedido->adicionarItem(
-    new PedidoItem(new Produto($produtos[1], 4.35), $quantidades[1])
-);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +12,7 @@ $pedido->adicionarItem(
 <body>
     <div class="container mt-4">
         <div class="alert alert-success" role="alert">
-            Pedido salvo com sucesso!
+            <?php echo $message; ?>
         </div>
         <div>
             O valor do total do pedido foi <?php echo $pedido->getValorTotal() ?>

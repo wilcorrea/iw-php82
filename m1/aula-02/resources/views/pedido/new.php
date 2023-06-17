@@ -10,7 +10,7 @@
 
 <body>
     <div class="container mt-4">
-        <form class="row g-3 needs-validation" action="post.php" method="POST" novalidate>
+        <form class="row g-3 needs-validation" action="/pedido" method="POST" novalidate>
             <div class="col-md-12">
                 <label for="cliente" class="form-label">Cliente</label>
                 <input type="text" class="form-control" id="cliente" name="cliente" required>
