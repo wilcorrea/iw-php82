@@ -13,5 +13,9 @@
             "Tests\\": "tests/"
         }
     },
-    "require": {}
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6",
+        "slim/php-view": "^3.2"
+    }
 }
