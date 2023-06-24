@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use App\Cadastro\Cliente;
 use App\Models\ClienteModel;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -15,6 +16,10 @@ class NewPedido
         // $params = $request->getQueryParams();
         $model = new ClienteModel();
         $clientes = $model->pegarClientes();
+        $clientes = array_map(
+            fn(Cliente $cliente) => (object)['id' => $cliente->id, 'nome' => $cliente->nome],
+            $clientes
+        );
         $parameters = [
             'clientes' => $clientes,
         ];

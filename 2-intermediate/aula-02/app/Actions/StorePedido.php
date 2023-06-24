@@ -18,9 +18,10 @@ class StorePedido
         // $response->getBody()->write(json_encode($data));
         $model = new ClienteModel();
         $cliente = $model->pegarCliente((int)$data['cliente']);
+        $pedido = new Pedido($cliente);
         $parameters = [
             'message' => "O cliente '{$cliente->nome}' selecionado",
-            'valor' => 0
+            'valor' => $pedido->getValorTotal(),
         ];
         $renderer = new PhpRenderer(__DIR__ . '/../../resources/views');
         return $renderer->render($response, 'pedido/success.php', $parameters);
