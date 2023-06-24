@@ -7,6 +7,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use App\Cadastro\Cliente;
 use App\Cadastro\Produto;
 use App\Models\ClienteModel;
+use App\Models\ProdutoModel;
 use App\Venda\Pedido;
 use App\Venda\PedidoItem;
 use Slim\Views\PhpRenderer;
@@ -19,6 +20,16 @@ class StorePedido
         $model = new ClienteModel();
         $cliente = $model->pegarCliente((int)$data['cliente']);
         $pedido = new Pedido($cliente);
+        
+        $produtos = $data['produtos'];
+        $produtoModel = new ProdutoModel();
+        foreach ($produtos as $linha) {
+            $id = $linha['id'];
+            $quantidade = $linha['quantidade'];
+            $produto = $produtoModel->pegarProduto($id);
+            $pedido->adicionarItem(new PedidoItem($produto, $quantidade));
+        }
+        
         $parameters = [
             'message' => "O cliente '{$cliente->nome}' selecionado",
             'valor' => $pedido->getValorTotal(),

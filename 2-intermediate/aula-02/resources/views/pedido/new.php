@@ -32,14 +32,25 @@
 
             <div class="col-md-8">
                 <label for="produto1" class="form-label">Produto 1</label>
-                <input type="text" class="form-control" id="produto1" name="produto[]" required>
+                <select class="form-select" id="produto1" name="produtos[0][id]" required aria-label="Default select example">
+                    <option selected>Selecione um produto</option>
+                    <?php
+                    foreach ($produtos as $produto) {
+                        ?>
+                        <option value="<?= $produto->id ?>">
+                            <?= $produto->nome ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                </select>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="quantidade1" class="form-label">Quantidade</label>
-                <select class="form-select" id="quantidade1" name="quantidade[]" required>
+                <label for="quantidade1" class="form-label">Quantidade 1</label>
+                <select class="form-select" id="quantidade1" name="produtos[0][quantidade]" required>
                     <option selected disabled value="">Escolha a quantidade</option>
                     <option>1</option>
                     <option>2</option>
@@ -50,16 +61,28 @@
                 </div>
             </div>
 
+
             <div class="col-md-8">
-                <label for="produto2" class="form-label">Produto 2</label>
-                <input type="text" class="form-control" id="produto2" name="produto[]" required>
+                <label for="produto1" class="form-label">Produto 2</label>
+                <select class="form-select" id="produto2" name="produtos[1][id]" required aria-label="Default select example">
+                    <option selected>Selecione um produto</option>
+                    <?php
+                    foreach ($produtos as $produto) {
+                        ?>
+                        <option value="<?= $produto->id ?>">
+                            <?= $produto->nome ?>
+                        </option>
+                        <?php
+                    }
+                    ?>
+                </select>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="quantidade2" class="form-label">Quantidade</label>
-                <select class="form-select" id="quantidade2" name="quantidade[]" required>
+                <label for="quantidade2" class="form-label">Quantidade 2</label>
+                <select class="form-select" id="quantidade2" name="produtos[1][quantidade]" required>
                     <option selected disabled value="">Escolha a quantidade</option>
                     <option>1</option>
                     <option>2</option>
@@ -68,6 +91,11 @@
                 <div class="invalid-feedback">
                     Informe a quantidade
                 </div>
+            </div>
+
+
+            <div class="col-12">
+                <input type="button" class="btn btn-light" value="+1">
             </div>
 
             <div class="col-12">
