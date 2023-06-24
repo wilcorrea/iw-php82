@@ -10,11 +10,11 @@
 
 <body>
     <div class="container mt-4">
-        <form class="row g-3 needs-validation" action="/pedido" method="POST" novalidate>
+        <form class="row g-3 needs-validation" action="/pedido" method="POST">
             <div class="col-md-12">
                 <label for="cliente" class="form-label">Cliente</label>
-                <select class="form-select" id="cliente" name="cliente" required aria-label="Default select example">
-                    <option selected>Selecione um cliente</option>
+                <select class="form-select" id="cliente" name="cliente" required>
+                    <option disabled value="" selected>Selecione um cliente</option>
                     <?php
                     foreach ($clientes as $cliente) {
                         ?>
@@ -33,7 +33,7 @@
             <div class="col-md-8">
                 <label for="produto1" class="form-label">Produto 1</label>
                 <select class="form-select" id="produto1" name="produtos[0][id]" required aria-label="Default select example">
-                    <option selected>Selecione um produto</option>
+                    <option disabled value="" selected>Selecione um produto</option>
                     <?php
                     foreach ($produtos as $produto) {
                         ?>
