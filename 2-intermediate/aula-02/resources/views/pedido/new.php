@@ -18,7 +18,9 @@
                     <?php
                     foreach ($clientes as $cliente) {
                         ?>
-                        <option value="1"><?= $cliente->nome ?></option>
+                        <option value="<?= $cliente->id ?>">
+                            <?= $cliente->nome ?>
+                        </option>
                         <?php
                     }
                     ?>

@@ -15,7 +15,7 @@
             <?php echo $message; ?>
         </div>
         <div>
-            O valor do total do pedido foi <?php echo $pedido->getValorTotal() ?>
+            O valor do total do pedido foi <?php echo $valor ?>
         </div>
     </div>
 </body>

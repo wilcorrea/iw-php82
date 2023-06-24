@@ -5,6 +5,7 @@ namespace App\Cadastro;
 class Cliente extends Pessoa implements \JsonSerializable
 {
     public function __construct(
+        public readonly int $id,
         public readonly string $nome,
         public readonly string $telefone = '',
         public readonly string $email = '',
