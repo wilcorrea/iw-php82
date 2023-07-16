@@ -1,0 +1,8 @@
+POST http://127.0.0.1:8000/api/users
+Content-Type: application/json
+
+{
+    "name": "Daniel Aleixo Correa",
+    "email": "daniel@gmail.com",
+    "password": "aq1sw2de3"
+}
