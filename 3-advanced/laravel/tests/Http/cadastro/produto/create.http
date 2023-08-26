@@ -1,0 +1,8 @@
+POST http://127.0.0.1:8000/api/produtos
+Content-Type: application/json
+
+{
+    "nome": "Xampu",
+    "valor": 0.02,
+    "nada-a-ver": true
+}

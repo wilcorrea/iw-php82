@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Cadastro\ProdutoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(UserController::class)->group(function () {
+    Route::get('/users', 'find');
     Route::post('/users', 'create');
     Route::get('/users/{user}', 'read');
     Route::patch('/users/{user}', 'update');
     Route::delete('/users/{user}', 'delete');
-    Route::get('/users', 'find');
+});
+
+Route::controller(ProdutoController::class)->group(function () {
+    Route::get('/produtos', 'find');
+    Route::post('/produtos', 'create');
+    Route::get('/produtos/{produto}', 'read');
+    Route::delete('/produtos/{produto}', 'destroy');
 });
