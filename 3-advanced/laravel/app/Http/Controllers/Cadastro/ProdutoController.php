@@ -24,7 +24,7 @@ class ProdutoController extends Controller
     {
         return $produto;
     }
-
+ 
     public function update(UpdateProdutoRequest $request, Produto $produto)
     {
         //

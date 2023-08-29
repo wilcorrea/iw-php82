@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Cadastro;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -17,7 +17,8 @@ class ProdutoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nome' => fake()->name(),
+            'valor' => fake()->numberBetween(0.01, 100),
         ];
     }
 }
