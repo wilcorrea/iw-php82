@@ -1,0 +1,8 @@
+POST http://127.0.0.1:8000/api/clientes
+Content-Type: application/json
+
+{
+    "nome": "William Correa",
+    "telefone": "+55(85)98166-1981",
+    "email": "test2@gmail.com"
+}

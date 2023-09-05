@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Cadastro\ClienteController;
 use App\Http\Controllers\Cadastro\ProdutoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -33,4 +34,12 @@ Route::controller(ProdutoController::class)->group(function () {
     Route::post('/produtos', 'create');
     Route::get('/produtos/{produto}', 'read');
     Route::delete('/produtos/{produto}', 'destroy');
+});
+
+Route::controller(ClienteController::class)->group(function () {
+    Route::get('/clientes', 'find');
+    Route::post('/clientes', 'create');
+    Route::get('/clientes/{id}', 'read');
+    Route::patch('/clientes/{id}', 'update');
+    Route::delete('/clientes/{id}', 'destroy');
 });

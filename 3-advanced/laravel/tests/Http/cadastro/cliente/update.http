@@ -1,0 +1,8 @@
+PATCH http://127.0.0.1:8000/api/clientes/4
+Content-Type: application/json
+
+{
+    "nome": "Daniel Aleixo",
+     "telefone": "+55(85)93121-4593",
+     "email": "test3@gmail.com"
+}
