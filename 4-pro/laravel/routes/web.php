@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Cadastro\ProdutoController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/produtos/novo', 'cadastro/produto/create');
+Route::resource('produtos', ProdutoController::class);

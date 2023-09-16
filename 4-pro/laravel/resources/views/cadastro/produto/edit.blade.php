@@ -1,12 +1,13 @@
 @extends ('layouts/site')
 
-@section ('title', 'Cadastrar Produto')
+@section ('title', 'Editar Produto')
 
 @section ('content')
     <form 
-        action="/produtos"
+        action="/produtos/{{ $produto->id }}"
         method="POST"
     >
+        @method ('PATCH')
         <div class="mb-3">
             <label for="exampleInputNome" class="form-label">Nome</label>
             <input 
@@ -15,6 +16,7 @@
                 id="exampleInputNome" 
                 aria-describedby="nomeHelp"
                 name="nome"
+                value="{{ $produto->nome }}"
             >
             <div id="nomeHelp" class="form-text">Digite um nome de produto</div>
         </div>
@@ -25,6 +27,7 @@
                 class="form-control"
                 id="exampleInputValor"
                 name="valor"
+                value="{{ $produto->valor }}"
             >
         </div>
         <div class="mb-3 form-check">
