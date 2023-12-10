@@ -1,6 +1,6 @@
 @extends ('layouts/site')
 
-@section ('title', 'Listam de Produto')
+@section ('title', 'Lista de Produto')
 
 @section ('content')
     @if (Session::has('success'))
